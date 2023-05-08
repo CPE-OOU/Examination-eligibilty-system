@@ -1,0 +1,57 @@
+<%- include('partials/header'); -%>
+    <h1>Check-Out</h1>
+    <form action="/ExamCheckOut" id="form_submit" method="POST">
+        <div class="row">
+            <div class="col">
+              <input type="text" class="form-control" placeholder="Matric number" name="matric" aria-label="Matric number">
+            </div>
+            <div class="col">
+                <select class="form-select" name="ExamCoursecode" aria-label="Default select example">
+                    <option selected>Course Code</option>
+                    <option value="CPE506">CPE506</option>
+                    <option value="CPE502">CPE502</option>
+                    <option value="CPE504">CPE504</option>
+                </select>
+            </div>
+            <div class="row g-3">
+                <div class="col-12">
+                    <button id="fingerprint_button" class="btn btn-primary" type="button">Add Fingerprint</button>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Check-Out</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="modal-custom  hidden">
+        <div class="modal-child">
+            <div class="modal-main">
+                <div class="modal-image">
+                    <div class="image-wrapper">
+                        <img id="fingerprint" src="images/cancel.jpg" alt="fingerprint image">
+                    </div>
+                </div>
+                <div class="modal-details">
+                    <div style="padding: 5px;border: 1px dashed rgba(61, 61, 61, 0.192);">
+                        <p style="font-weight:bold;">Captured <span id="scan-count">0</span>/1</p>
+                        <hr>
+                        <button id="scan_button" style="border:1px solid gray;padding: 2px 30px;display: block;margin-left: auto;">Scan</button>
+                    </div>
+
+                    <div>
+
+                        <p style="font-size:14px; font-style: italic;">
+                            Place Right Hand Index finger on the selected Fingerprint hardware
+                        </p>
+                    </div>
+                    <div style="flex: 1"></div>
+                    <button id="save_button" style="border: none; padding: 4px 0;border-radius: 5px;align-self: flex-end;width: 100%;">Save</button>
+                </div>
+            </div>
+        </div>
+</div>
+
+<%- include('partials/footer'); -%>
